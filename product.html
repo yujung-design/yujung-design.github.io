@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PERFUME | GRAN<span class="thin">DH</span></title>
+    <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;500&family=Noto+Sans+KR:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <div class="container">
+            <a href="index.html" class="logo">GRAN<span class="thin">DH</span></a>
+            <nav class="nav-menu">
+                <a href="product.html" class="active">SHOP</a>
+                <a href="story.html">STORY</a>
+                <a href="album.html">ALBUM</a>
+                <a href="#!">JOURNAL</a>
+                <a href="#!">LOCATION</a>
+            </nav>
+            <div class="header-icons">
+                <a href="#!"><i class="far fa-user"></i></a>
+                <a href="#!"><i class="fas fa-search"></i></a>
+                <a href="#!"><i class="fas fa-shopping-bag"></i></a>
+                 <button class="mobile-menu-toggle"><i class="fas fa-bars"></i></button>
+            </div>
+        </div>
+    </header>
+
+    <!-- 제품 상세 섹션 -->
+    <section class="product-detail container">
+        <div class="product-gallery">
+            <div class="main-image">
+                <img src="https://images.unsplash.com/photo-1629577452542-a0c9864a5983?q=80&w=800&auto=format&fit=crop" alt="제품 메인 이미지">
+            </div>
+            <div class="thumbnail-images">
+                <img src="https://images.unsplash.com/photo-1629577452542-a0c9864a5983?q=80&w=150&auto=format&fit=crop" alt="썸네일 1">
+                <img src="https://images.unsplash.com/photo-1544096436-b1ac87a15063?q=80&w=150&auto=format&fit=crop" alt="썸네일 2">
+                <img src="https://images.unsplash.com/photo-1593030666671-f2b2803b8708?q=80&w=150&auto=format&fit=crop" alt="썸네일 3">
+                <img src="https://images.unsplash.com/photo-1541643600914-78b084683601?q=80&w=150&auto=format&fit=crop" alt="썸네일 4">
+            </div>
+        </div>
+
+        <div class="product-info">
+            <span class="product-category">PERFUME</span>
+            <h2>SUSAN</h2>
+            <p class="product-description">이끼로 뒤덮인 젖은 땅, 그 사이로 피어난 야생화의 싱그러움. 숲속의 고요함을 담은 차분하고 중성적인 향.</p>
+            <div class="product-price">￦45,000</div>
+
+            <div class="product-options">
+                <label for="size">SIZE</label>
+                <select id="size">
+                    <option>100ml</option>
+                    <option>50ml</option>
+                </select>
+                <label for="quantity">QTY</label>
+                <input type="number" id="quantity" value="1" min="1">
+            </div>
+
+            <button class="btn-cart">ADD TO CART</button>
+            <button class="btn-wishlist"><i class="far fa-heart"></i></button>
+            
+            <div class="accordion">
+                <div class="accordion-item">
+                    <button class="accordion-header">SCENT NOTE <i class="fas fa-chevron-down"></i></button>
+                    <div class="accordion-body">
+                        <p><strong>Top:</strong> Bergamot, Blackcurrant</p>
+                        <p><strong>Middle:</strong> Wildflower, Moss
