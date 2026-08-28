@@ -1,133 +1,150 @@
-<!DOCTYPE HTML>
-<html>
-	<head>
-		<title>이유정 | Portfolio</title>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&display=swap" rel="stylesheet">
-		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
-		<link rel="stylesheet" href="assets/css/main.css" />
-		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
-	</head>
-	<body class="is-preload">
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>이유정 | 포트폴리오</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;500&family=Noto+Sans+KR:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Swiper CSS (배너 슬라이더용) -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Noto Sans KR', sans-serif; color: #111; background-color: #fff; line-height: 1.6; }
+        a { text-decoration: none; color: inherit; }
 
-		<div id="wrapper">
+        /* Header */
+        header { display: flex; justify-content: space-between; align-items: center; padding: 2rem 5%; border-bottom: 1px solid #eee; position: sticky; top: 0; background: #fff; z-index: 1000; }
+        .logo { font-family: 'EB Garamond', serif; font-size: 1.8rem; font-weight: 500; letter-spacing: 2px; }
+        .logo span { font-weight: 300; color: #777; }
+        .nav-menu { display: flex; gap: 2.5rem; font-size: 0.95rem; font-weight: 400; letter-spacing: 1px; }
+        .nav-menu a:hover { color: #777; }
 
-			<header id="header">
-				<h1><a href="index.html"><strong>Portfolio</strong> by 이유정</a></h1>
-				<nav>
-					<ul>
-						<li><a href="product.html">Detail 1 (Product)</a></li>
-						<li><a href="story.html">Detail 2 (Story & AI)</a></li>
-						<li><a href="album.html">Detail 3 (Album)</a></li>
-					</ul>
-				</nav>
-			</header>
+        /* Main Banner Slider (5개 배너) */
+        .main-banner { width: 100%; height: 75vh; }
+        .swiper { width: 100%; height: 100%; }
+        .swiper-slide { background-size: cover; background-position: center; display: flex; align-items: center; justify-content: center; text-align: center; color: #fff; position: class; }
+        .swiper-slide::before { content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.25); z-index: 1; }
+        .banner-content { position: relative; z-index: 2; max-width: 700px; padding: 0 20px; }
+        .banner-content h2 { font-family: 'EB Garamond', serif; font-size: 3rem; margin-bottom: 1rem; font-weight: 400; letter-spacing: 1px; }
+        .banner-content p { font-size: 1.1rem; margin-bottom: 2rem; font-weight: 300; opacity: 0.9; }
 
-			<section class="main-banner-section" style="padding: 2rem 0; background: #f4f4f4;">
-				<div class="swiper myBannerSwiper" style="width: 100%; max-width: 1200px; height: 400px; margin: 0 auto; border-radius: 8px; overflow: hidden;">
-					<div class="swiper-wrapper">
-						<div class="swiper-slide" style="background: url('https://images.unsplash.com/photo-1606115240528-4be8686862f4?q=80&w=1200&auto=format&fit=crop') center/cover no-repeat; display: flex; align-items: center; justify-content: center; color: #fff; text-shadow: 0 2px 4px rgba(0,0,0,0.5);">
-							<div style="text-align: center;"><h2>Banner 1: Visual Design</h2><p>샤넬 콘셉트 비주얼 디자인 아카이브</p></div>
-						</div>
-						<div class="swiper-slide" style="background: url('https://images.unsplash.com/photo-1600185365926-3a2ce3cdb9eb?q=80&w=1200&auto=format&fit=crop') center/cover no-repeat; display: flex; align-items: center; justify-content: center; color: #fff; text-shadow: 0 2px 4px rgba(0,0,0,0.5);">
-							<div style="text-align: center;"><h2>Banner 2: Commercial Banner</h2><p>감각적인 색보정과 상업 디자인</p></div>
-						</div>
-						<div class="swiper-slide" style="background: url('https://images.unsplash.com/photo-1597349610328-88e451b9d44e?q=80&w=1200&auto=format&fit=crop') center/cover no-repeat; display: flex; align-items: center; justify-content: center; color: #fff; text-shadow: 0 2px 4px rgba(0,0,0,0.5);">
-							<div style="text-align: center;"><h2>Banner 3: Promotion</h2><p>시즌별 프로모션 및 이벤트 배너</p></div>
-						</div>
-						<div class="swiper-slide" style="background: url('https://images.unsplash.com/photo-1581094794329-c8112a896128?q=80&w=1200&auto=format&fit=crop') center/cover no-repeat; display: flex; align-items: center; justify-content: center; color: #fff; text-shadow: 0 2px 4px rgba(0,0,0,0.5);">
-							<div style="text-align: center;"><h2>Banner 4: AI Atelier</h2><p>AI 기술을 활용한 크리에이티브 작업물</p></div>
-						</div>
-						<div class="swiper-slide" style="background: url('https://images.unsplash.com/photo-1515377905703-c4788e51af15?q=80&w=1200&auto=format&fit=crop') center/cover no-repeat; display: flex; align-items: center; justify-content: center; color: #fff; text-shadow: 0 2px 4px rgba(0,0,0,0.5);">
-							<div style="text-align: center;"><h2>Banner 5: Trophy & Album</h2><p>상패 및 다양한 디자인 스튜디오 앨범</p></div>
-						</div>
-					</div>
-					<div class="swiper-button-next"></div>
-					<div class="swiper-button-prev"></div>
-					<div class="swiper-pagination"></div>
-				</div>
-			</section>
+        /* Portfolio Grid Section */
+        .portfolio-section { max-width: 1400px; margin: 5rem auto; padding: 0 2rem; }
+        .grid-container { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 40px 30px; }
+        .portfolio-item { display: block; overflow: hidden; }
+        .portfolio-img-wrap { width: 100%; height: 400px; overflow: hidden; background: #f4f4f4; margin-bottom: 1rem; }
+        .portfolio-img-wrap img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1); }
+        .portfolio-item:hover .portfolio-img-wrap img { transform: scale(1.03); }
+        .portfolio-info h3 { font-size: 1.1rem; font-weight: 500; margin-bottom: 0.3rem; letter-spacing: 0.5px; }
+        .portfolio-info p { font-size: 0.9rem; color: #666; font-weight: 300; }
 
-			<div id="main">
-				<article class="thumb">
-					<a href="images/fulls/01.png" class="image"><img src="images/thumbs/01.png" alt="" /></a>
-					<h2>visual</h2>
-					<p>사랑스러운 분위기를 연출하고자 분홍색과 꽃으로 장식하였고, 브랜드 샤넬이 가지는 고유의 스티치를 글자에 표현했습니다.</p>
-				</article>						
-				<article class="thumb">
-					<a href="images/fulls/02.jpg" class="image"><img src="images/thumbs/02.jpg" alt="" /></a>
-					<h2>commercial</h2>
-					<p>귤이 가지는 주황색과 초록색을 배경과 색보정에 사용하고, 도장을 넣어서 품질에 신경쓰는 장인의 느낌을 표현했습니다.</p>
-				</article>
-				<article class="thumb">
-					<a href="images/fulls/05.jpg" class="image"><img src="images/thumbs/05.jpg" alt="" /></a>
-					<h2>commercial</h2>
-					<p>아이가 사용하는 제품으로 안전성을 강조하였습니다.</p>
-				</article>						
-				<article class="thumb">
-					<a href="images/fulls/07.jpg" class="image"><img src="images/thumbs/07.jpg" alt="" /></a>
-					<h2>commercial</h2>
-					<p>30대의 편안하고 여유로운 분위기를 표현하는 페이지입니다.</p>
-				</article>
-				<article class="thumb">
-					<a href="images/fulls/08.jpg" class="image"><img src="images/thumbs/08.jpg" alt="" /></a>
-					<h2>visual</h2>
-					<p>가상의 브랜드인 Laven을 인터뷰한 내용이라는 설정으로 제작되었습니다.</p>
-				</article>
-				<article class="thumb">
-					<a href="images/fulls/09.jpg" class="image"><img src="images/thumbs/09.jpg" alt="" /></a>
-					<h2>commercial</h2>
-					<p>보습력이 좋은 립밤을 물에 빗대어 맑고 촉촉하게 표현해 보았습니다.</p>
-				</article>
-				<article class="thumb">
-					<a href="images/fulls/10.jpg" class="image"><img src="images/thumbs/10.jpg" alt="" /></a>
-					<h2>commercial</h2>
-					<p>1 + 1 상품에 초점이 가도록 흐림효과를 다르게 주어 집중도를 높였습니다.</p>
-				</article>
-				<article class="thumb">
-					<a href="images/fulls/12.jpg" class="image"><img src="images/thumbs/12.jpg" alt="" /></a>
-					<h2>commercial</h2>
-					<p>하트모양 구멍을 내고 화장품 팔레트 같은 느낌을 표현하고자 하였습니다.</p>
-				</article>
-				<article class="thumb">
-					<a href="images/fulls/14.jpg" class="image"><img src="images/thumbs/14.jpg" alt="" /></a>
-					<h2>commercial</h2>
-					<p>추석 PROMOTION으로 보름달을 배경으로 배치하고 빛나는 효과를 주었습니다.</p>
-				</article>
-				<article class="thumb">
-					<a href="images/fulls/16.jpg" class="image"><img src="images/thumbs/16.jpg" alt="" /></a>
-					<h2>tool-miricanvas(1)</h2>
-					<p>의뢰인의 요청에 의해 제작된 상세페이지입니다.</p>
-				</article>
-				<article class="thumb">
-					<a href="images/fulls/17.jpg" class="image"><img src="images/thumbs/17.jpg" alt="" /></a>
-					<h2>tool-miricanvas(2)</h2>
-					<p>의뢰인의 요청에 의해 제작된 상세페이지입니다.</p>
-				</article>
-			</div>
+        /* Footer */
+        footer { border-top: 1px solid #eee; padding: 4rem 5%; text-align: center; color: #888; font-size: 0.85rem; margin-top: 6rem; }
 
-			<footer id="footer">
-				<p class="copyright">&copy; 이유정 Portfolio. Design: HTML5 UP & Custom Modified.</p>
-			</footer>
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-menu { display: none; }
+            .banner-content h2 { font-size: 2.2rem; }
+            .portfolio-img-wrap { height: 300px; }
+        }
+    </style>
+</head>
+<body>
 
-		</div>
+    <!-- 헤더 -->
+    <header>
+        <a href="index.html" class="logo">LEE YOU JUNG <span>ARCHIVE</span></a>
+        <nav class="nav-menu">
+            <a href="product.html">DETAIL 1 (VISUAL/COMMERCIAL)</a>
+            <a href="story.html">DETAIL 2 (STORY & AI)</a>
+            <a href="album.html">DETAIL 3 (TROPHY ALBUM)</a>
+        </nav>
+    </header>
 
-		<script src="assets/js/jquery.min.js"></script>
-		<script src="assets/js/jquery.poptrox.min.js"></script>
-		<script src="assets/js/browser.min.js"></script>
-		<script src="assets/js/breakpoints.min.js"></script>
-		<script src="assets/js/util.js"></script>
-		<script src="assets/js/main.js"></script>
-		<script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
-		<script>
-			const swiper = new Swiper('.myBannerSwiper', {
-				loop: true,
-				autoplay: { delay: 3000, disableOnInteraction: false },
-				pagination: { el: '.swiper-pagination', clickable: true },
-				navigation: { nextEl: '.swiper-button-next', prevEl: '.swiper-button-prev' },
-			});
-		</script>
-	</body>
+    <!-- 메인 배너 슬라이더 (5개의 배너) -->
+    <section class="main-banner">
+        <div class="swiper bannerSwiper">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide" style="background-image: url('https://images.unsplash.com/photo-1606115240528-4be8686862f4?q=80&w=1920&auto=format&fit=crop');">
+                    <div class="banner-content">
+                        <h2>Visual & Commercial Design</h2>
+                        <p>감각적인 색보정과 트렌디한 비주얼 아카이브</p>
+                    </div>
+                </div>
+                <div class="swiper-slide" style="background-image: url('https://images.unsplash.com/photo-1600185365926-3a2ce3cdb9eb?q=80&w=1920&auto=format&fit=crop');">
+                    <div class="banner-content">
+                        <h2>Brand Identity & Package</h2>
+                        <p>브랜드 고유의 철학을 담은 그래픽 디자인</p>
+                    </div>
+                </div>
+                <div class="swiper-slide" style="background-image: url('https://images.unsplash.com/photo-1597349610328-88e451b9d44e?q=80&w=1920&auto=format&fit=crop');">
+                    <div class="banner-content">
+                        <h2>Promotion & Event</h2>
+                        <p>시즌별 이슈를 반영한 프로모션 배너 레이아웃</p>
+                    </div>
+                </div>
+                <div class="swiper-slide" style="background-image: url('https://images.unsplash.com/photo-1581094794329-c8112a896128?q=80&w=1920&auto=format&fit=crop');">
+                    <div class="banner-content">
+                        <h2>AI Atelier Collaboration</h2>
+                        <p>생성형 AI 기술을 접목한 크리에이티브 실험실</p>
+                    </div>
+                </div>
+                <div class="swiper-slide" style="background-image: url('https://images.unsplash.com/photo-1531403009284-440f080d1e12?q=80&w=1920&auto=format&fit=crop');">
+                    <div class="banner-content">
+                        <h2>Trophy & Special Album</h2>
+                        <p>상패 디자인 및 다양한 디자인 작업물 앨범</p>
+                    </div>
+                </div>
+            </div>
+            <div class="swiper-button-next" style="color: #fff;"></div>
+            <div class="swiper-button-prev" style="color: #fff;"></div>
+            <div class="swiper-pagination"></div>
+        </div>
+    </section>
+
+    <!-- 포트폴리오 그리드 영역 -->
+    <main class="portfolio-section">
+        <div class="grid-container">
+            <a href="product.html" class="portfolio-item">
+                <div class="portfolio-img-wrap"><img src="https://images.unsplash.com/photo-1541643600914-78b084683601?q=80&w=800&auto=format&fit=crop" alt="작업물 1"></div>
+                <div class="portfolio-info"><h3>Visual Concept Archive</h3><p>사랑스러운 무드와 브랜드 스티치 요소를 담은 그래픽</p></div>
+            </a>
+            <a href="product.html" class="portfolio-item">
+                <div class="portfolio-img-wrap"><img src="https://images.unsplash.com/photo-1606096126624-9a58f7569d64?q=80&w=800&auto=format&fit=crop" alt="작업물 2"></div>
+                <div class="portfolio-info"><h3>Commercial Banner Design</h3><p>컬러 톤앤매너와 장인 정신을 표현한 커머셜 페이지</p></div>
+            </a>
+            <a href="product.html" class="portfolio-item">
+                <div class="portfolio-img-wrap"><img src="https://images.unsplash.com/photo-1613923701795-f167aa1c7114?q=80&w=800&auto=format&fit=crop" alt="작업물 3"></div>
+                <div class="portfolio-info"><h3>Promotion Layout</h3><p>시즌 프로모션 및 가독성을 높인 상세페이지 레이아웃</p></div>
+            </a>
+            <a href="story.html" class="portfolio-item">
+                <div class="portfolio-img-wrap"><img src="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?q=80&w=800&auto=format&fit=crop" alt="AI 작업물"></div>
+                <div class="portfolio-info"><h3>AI Atelier Artwork</h3><p>인공지능과 디자인의 협업을 통해 창출한 비주얼</p></div>
+            </a>
+            <a href="album.html" class="portfolio-item">
+                <div class="portfolio-img-wrap"><img src="https://images.unsplash.com/photo-1531403009284-440f080d1e12?q=80&w=800&auto=format&fit=crop" alt="상패 앨범"></div>
+                <div class="portfolio-info"><h3>Trophy & Plaque Design Album</h3><p>정교한 디테일이 돋보이는 상패 및 공로패 디자인 아카이브</p></div>
+            </a>
+        </div>
+    </main>
+
+    <!-- 푸터 -->
+    <footer>
+        <p>&copy; 2026 LEE YOU JUNG. All rights reserved.</p>
+    </footer>
+
+    <!-- Swiper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+    <script>
+        const swiper = new Swiper('.bannerSwiper', {
+            loop: true,
+            autoplay: { delay: 4000, disableOnInteraction: false },
+            pagination: { el: '.swiper-pagination', clickable: true },
+            navigation: { nextEl: '.swiper-button-next', prevEl: '.swiper-button-prev' },
+        });
+    </script>
+</body>
 </html>
