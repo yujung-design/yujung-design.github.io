@@ -1,171 +1,133 @@
-<!DOCTYPE html>
-<html lang="ko">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GRANDH - 감각적인 일상의 조각 | 반응형 포트폴리오</title>
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;500&family=Noto+Sans+KR:wght@300;400;500;700&display=swap" rel="stylesheet">
-    <!-- FontAwesome Icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <!-- Swiper.js CSS -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css">
-    <!-- Custom CSS -->
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>이유정 | Portfolio</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&display=swap" rel="stylesheet">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+	</head>
+	<body class="is-preload">
 
-    <!-- 헤더 -->
-    <header>
-        <div class="container">
-            <a href="index.html" class="logo">GRAN<span class="thin">DH</span></a>
-            <nav class="nav-menu">
-                <a href="product.html">SHOP</a>
-                <a href="story.html">STORY</a>
-                <a href="album.html">ALBUM</a>
-                <a href="#!">JOURNAL</a>
-                <a href="#!">LOCATION</a>
-            </nav>
-            <div class="header-icons">
-                <a href="#!"><i class="far fa-user"></i></a>
-                <a href="#!"><i class="fas fa-search"></i></a>
-                <a href="#!"><i class="fas fa-shopping-bag"></i></a>
-                <button class="mobile-menu-toggle"><i class="fas fa-bars"></i></button>
-            </div>
-        </div>
-    </header>
+		<div id="wrapper">
 
-    <!-- 메인 배너 슬라이더 -->
-    <section class="main-banner">
-        <div class="swiper bannerSwiper">
-            <div class="swiper-wrapper">
-                <!-- 배너 1 -->
-                <div class="swiper-slide" style="background-image: url('https://images.unsplash.com/photo-1606115240528-4be8686862f4?q=80&w=1920&auto=format&fit=crop');">
-                    <div class="banner-content">
-                        <h2>The Scent of Memory</h2>
-                        <p>당신의 기억을 향기로 기록합니다.</p>
-                        <a href="product.html" class="btn-primary">DISCOVER</a>
-                    </div>
-                </div>
-                <!-- 배너 2 -->
-                <div class="swiper-slide" style="background-image: url('https://images.unsplash.com/photo-1600185365926-3a2ce3cdb9eb?q=80&w=1920&auto=format&fit=crop');">
-                    <div class="banner-content light">
-                        <h2>New Collection: Aura</h2>
-                        <p>일상에 새로운 빛을 더하는 향수 컬렉션.</p>
-                        <a href="product.html" class="btn-primary light">VIEW</a>
-                    </div>
-                </div>
-                <!-- 배너 3 -->
-                <div class="swiper-slide" style="background-image: url('https://images.unsplash.com/photo-1597349610328-88e451b9d44e?q=80&w=1920&auto=format&fit=crop');">
-                    <div class="banner-content">
-                        <h2>Scented Wax Tablet</h2>
-                        <p>공간을 채우는 은은한 향기, 왁스 타블렛.</p>
-                        <a href="product.html" class="btn-primary">EXPLORE</a>
-                    </div>
-                </div>
-                <!-- 배너 4 (AI) -->
-                <div class="swiper-slide" style="background-image: url('https://images.unsplash.com/photo-1581094794329-c8112a896128?q=80&w=1920&auto=format&fit=crop');">
-                    <div class="banner-content light">
-                        <h2>AI Atelier Collaboration</h2>
-                        <p>AI가 상상한 미래의 향을 만나보세요.</p>
-                        <a href="story.html#ai" class="btn-primary light">READ MORE</a>
-                    </div>
-                </div>
-                 <!-- 배너 5 -->
-                <div class="swiper-slide" style="background-image: url('https://images.unsplash.com/photo-1515377905703-c4788e51af15?q=80&w=1920&auto=format&fit=crop');">
-                   <div class="banner-content light">
-                       <h2>GRANDH JOURNAL</h2>
-                       <p>브랜드 이야기와 일상을 공유합니다.</p>
-                       <a href="#!" class="btn-primary light">SEE JOURNAL</a>
-                   </div>
-               </div>
-            </div>
-            <!-- 네비게이션 버튼 -->
-            <div class="swiper-button-next"></div>
-            <div class="swiper-button-prev"></div>
-            <!-- 페이지네이션 -->
-            <div class="swiper-pagination"></div>
-        </div>
-    </section>
+			<header id="header">
+				<h1><a href="index.html"><strong>Portfolio</strong> by 이유정</a></h1>
+				<nav>
+					<ul>
+						<li><a href="product.html">Detail 1 (Product)</a></li>
+						<li><a href="story.html">Detail 2 (Story & AI)</a></li>
+						<li><a href="album.html">Detail 3 (Album)</a></li>
+					</ul>
+				</nav>
+			</header>
 
-    <!-- 주요 카테고리 그리드 -->
-    <section class="categories container">
-        <a href="product.html" class="category-item">
-            <img src="https://images.unsplash.com/photo-1613923701795-f167aa1c7114?q=80&w=600&auto=format&fit=crop" alt="향수">
-            <div class="category-text">
-                <h3>PERFUME</h3>
-                <p>기억을 담은 시그니처 향수</p>
-            </div>
-        </a>
-        <a href="product.html" class="category-item">
-            <img src="https://images.unsplash.com/photo-1606096126624-9a58f7569d64?q=80&w=600&auto=format&fit=crop" alt="디퓨저">
-            <div class="category-text">
-                <h3>DIFFUSER</h3>
-                <p>공간을 물들이는 향기</p>
-            </div>
-        </a>
-        <a href="product.html" class="category-item">
-            <img src="https://images.unsplash.com/photo-1595167729347-0e38d5759f8b?q=80&w=600&auto=format&fit=crop" alt="핸드크림">
-            <div class="category-text">
-                <h3>HAND CARE</h3>
-                <p>촉촉하게 스며드는 보습</p>
-            </div>
-        </a>
-         <a href="product.html" class="category-item">
-            <img src="https://images.unsplash.com/photo-1615937644632-d81664a9c141?q=80&w=600&auto=format&fit=crop" alt="캔들">
-            <div class="category-text">
-                <h3>SCENTED CANDLE</h3>
-                <p>분위기를 완성하는 따뜻한 빛과 향</p>
-            </div>
-        </a>
-    </section>
+			<section class="main-banner-section" style="padding: 2rem 0; background: #f4f4f4;">
+				<div class="swiper myBannerSwiper" style="width: 100%; max-width: 1200px; height: 400px; margin: 0 auto; border-radius: 8px; overflow: hidden;">
+					<div class="swiper-wrapper">
+						<div class="swiper-slide" style="background: url('https://images.unsplash.com/photo-1606115240528-4be8686862f4?q=80&w=1200&auto=format&fit=crop') center/cover no-repeat; display: flex; align-items: center; justify-content: center; color: #fff; text-shadow: 0 2px 4px rgba(0,0,0,0.5);">
+							<div style="text-align: center;"><h2>Banner 1: Visual Design</h2><p>샤넬 콘셉트 비주얼 디자인 아카이브</p></div>
+						</div>
+						<div class="swiper-slide" style="background: url('https://images.unsplash.com/photo-1600185365926-3a2ce3cdb9eb?q=80&w=1200&auto=format&fit=crop') center/cover no-repeat; display: flex; align-items: center; justify-content: center; color: #fff; text-shadow: 0 2px 4px rgba(0,0,0,0.5);">
+							<div style="text-align: center;"><h2>Banner 2: Commercial Banner</h2><p>감각적인 색보정과 상업 디자인</p></div>
+						</div>
+						<div class="swiper-slide" style="background: url('https://images.unsplash.com/photo-1597349610328-88e451b9d44e?q=80&w=1200&auto=format&fit=crop') center/cover no-repeat; display: flex; align-items: center; justify-content: center; color: #fff; text-shadow: 0 2px 4px rgba(0,0,0,0.5);">
+							<div style="text-align: center;"><h2>Banner 3: Promotion</h2><p>시즌별 프로모션 및 이벤트 배너</p></div>
+						</div>
+						<div class="swiper-slide" style="background: url('https://images.unsplash.com/photo-1581094794329-c8112a896128?q=80&w=1200&auto=format&fit=crop') center/cover no-repeat; display: flex; align-items: center; justify-content: center; color: #fff; text-shadow: 0 2px 4px rgba(0,0,0,0.5);">
+							<div style="text-align: center;"><h2>Banner 4: AI Atelier</h2><p>AI 기술을 활용한 크리에이티브 작업물</p></div>
+						</div>
+						<div class="swiper-slide" style="background: url('https://images.unsplash.com/photo-1515377905703-c4788e51af15?q=80&w=1200&auto=format&fit=crop') center/cover no-repeat; display: flex; align-items: center; justify-content: center; color: #fff; text-shadow: 0 2px 4px rgba(0,0,0,0.5);">
+							<div style="text-align: center;"><h2>Banner 5: Trophy & Album</h2><p>상패 및 다양한 디자인 스튜디오 앨범</p></div>
+						</div>
+					</div>
+					<div class="swiper-button-next"></div>
+					<div class="swiper-button-prev"></div>
+					<div class="swiper-pagination"></div>
+				</div>
+			</section>
 
-    <!-- 뉴스레터 섹션 -->
-    <section class="newsletter">
-        <div class="container">
-            <h2>STAY SCENTED</h2>
-            <p>GRANDH의 새로운 소식과 특별한 혜택을 가장 먼저 받아보세요.</p>
-            <form class="newsletter-form">
-                <input type="email" placeholder="Enter your email address" required>
-                <button type="submit" class="btn-secondary">SUBSCRIBE</button>
-            </form>
-        </div>
-    </section>
+			<div id="main">
+				<article class="thumb">
+					<a href="images/fulls/01.png" class="image"><img src="images/thumbs/01.png" alt="" /></a>
+					<h2>visual</h2>
+					<p>사랑스러운 분위기를 연출하고자 분홍색과 꽃으로 장식하였고, 브랜드 샤넬이 가지는 고유의 스티치를 글자에 표현했습니다.</p>
+				</article>						
+				<article class="thumb">
+					<a href="images/fulls/02.jpg" class="image"><img src="images/thumbs/02.jpg" alt="" /></a>
+					<h2>commercial</h2>
+					<p>귤이 가지는 주황색과 초록색을 배경과 색보정에 사용하고, 도장을 넣어서 품질에 신경쓰는 장인의 느낌을 표현했습니다.</p>
+				</article>
+				<article class="thumb">
+					<a href="images/fulls/05.jpg" class="image"><img src="images/thumbs/05.jpg" alt="" /></a>
+					<h2>commercial</h2>
+					<p>아이가 사용하는 제품으로 안전성을 강조하였습니다.</p>
+				</article>						
+				<article class="thumb">
+					<a href="images/fulls/07.jpg" class="image"><img src="images/thumbs/07.jpg" alt="" /></a>
+					<h2>commercial</h2>
+					<p>30대의 편안하고 여유로운 분위기를 표현하는 페이지입니다.</p>
+				</article>
+				<article class="thumb">
+					<a href="images/fulls/08.jpg" class="image"><img src="images/thumbs/08.jpg" alt="" /></a>
+					<h2>visual</h2>
+					<p>가상의 브랜드인 Laven을 인터뷰한 내용이라는 설정으로 제작되었습니다.</p>
+				</article>
+				<article class="thumb">
+					<a href="images/fulls/09.jpg" class="image"><img src="images/thumbs/09.jpg" alt="" /></a>
+					<h2>commercial</h2>
+					<p>보습력이 좋은 립밤을 물에 빗대어 맑고 촉촉하게 표현해 보았습니다.</p>
+				</article>
+				<article class="thumb">
+					<a href="images/fulls/10.jpg" class="image"><img src="images/thumbs/10.jpg" alt="" /></a>
+					<h2>commercial</h2>
+					<p>1 + 1 상품에 초점이 가도록 흐림효과를 다르게 주어 집중도를 높였습니다.</p>
+				</article>
+				<article class="thumb">
+					<a href="images/fulls/12.jpg" class="image"><img src="images/thumbs/12.jpg" alt="" /></a>
+					<h2>commercial</h2>
+					<p>하트모양 구멍을 내고 화장품 팔레트 같은 느낌을 표현하고자 하였습니다.</p>
+				</article>
+				<article class="thumb">
+					<a href="images/fulls/14.jpg" class="image"><img src="images/thumbs/14.jpg" alt="" /></a>
+					<h2>commercial</h2>
+					<p>추석 PROMOTION으로 보름달을 배경으로 배치하고 빛나는 효과를 주었습니다.</p>
+				</article>
+				<article class="thumb">
+					<a href="images/fulls/16.jpg" class="image"><img src="images/thumbs/16.jpg" alt="" /></a>
+					<h2>tool-miricanvas(1)</h2>
+					<p>의뢰인의 요청에 의해 제작된 상세페이지입니다.</p>
+				</article>
+				<article class="thumb">
+					<a href="images/fulls/17.jpg" class="image"><img src="images/thumbs/17.jpg" alt="" /></a>
+					<h2>tool-miricanvas(2)</h2>
+					<p>의뢰인의 요청에 의해 제작된 상세페이지입니다.</p>
+				</article>
+			</div>
 
-    <!-- 푸터 -->
-    <footer>
-        <div class="container">
-            <div class="footer-col">
-                <h4>ABOUT US</h4>
-                <a href="story.html">Our Story</a>
-                <a href="#!">AI Atelier</a>
-                <a href="#!">Careers</a>
-            </div>
-            <div class="footer-col">
-                <h4>SERVICE</h4>
-                <a href="#!">FAQ</a>
-                <a href="#!">Contact Us</a>
-                <a href="#!">Shipping</a>
-            </div>
-            <div class="footer-col">
-                <h4>LEGAL</h4>
-                <a href="#!">Terms of Use</a>
-                <a href="#!">Privacy Policy</a>
-            </div>
-            <div class="footer-social">
-                <a href="#!"><i class="fab fa-instagram"></i></a>
-                <a href="#!"><i class="fab fa-facebook-f"></i></a>
-                <a href="#!"><i class="fab fa-youtube"></i></a>
-            </div>
-        </div>
-        <div class="footer-bottom container">
-            <p>&copy; 2024 GRAN<span class="thin">DH</span> 포트폴리오 웹사이트. All rights reserved.</p>
-        </div>
-    </footer>
+			<footer id="footer">
+				<p class="copyright">&copy; 이유정 Portfolio. Design: HTML5 UP & Custom Modified.</p>
+			</footer>
 
-    <!-- Swiper.js JS -->
-    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
-    <!-- Custom JS -->
-    <script src="script.js"></script>
-</body>
+		</div>
+
+		<script src="assets/js/jquery.min.js"></script>
+		<script src="assets/js/jquery.poptrox.min.js"></script>
+		<script src="assets/js/browser.min.js"></script>
+		<script src="assets/js/breakpoints.min.js"></script>
+		<script src="assets/js/util.js"></script>
+		<script src="assets/js/main.js"></script>
+		<script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+		<script>
+			const swiper = new Swiper('.myBannerSwiper', {
+				loop: true,
+				autoplay: { delay: 3000, disableOnInteraction: false },
+				pagination: { el: '.swiper-pagination', clickable: true },
+				navigation: { nextEl: '.swiper-button-next', prevEl: '.swiper-button-prev' },
+			});
+		</script>
+	</body>
 </html>
