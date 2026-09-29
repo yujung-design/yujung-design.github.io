@@ -7,7 +7,8 @@
 
 :root {
     --bg-color: #fcfbfa; /* 무채색 웨딩 톤 베이스 */
-    --text-color: #2b2b2b;
+    --text-color: #222222;
+    --second-text-color: #606060;
     --hover-color: #7a7a7a;
     --border-color: #d1d1d1;
     --box-bg: #ffffff;
@@ -15,7 +16,8 @@
 
 [data-theme="monotone"] {
     --bg-color: #121212;
-    --text-color: #e0e0e0;
+    --text-color: #eaeaea;
+    --second-text-color: #bcbcbc;
     --hover-color: #ffffff;
     --border-color: #444444;
     --box-bg: #1e1e1e;
@@ -24,7 +26,7 @@
 body {
     font-family: 'Noto Sans KR', sans-serif;
     background-color: var(--bg-color);
-    color: var(--text-color);
+    color: var(--second-text-color);
     min-height: 100vh;
     display: flex;
     justify-content: center;
@@ -62,7 +64,7 @@ header {
 .num-item-box {
     width: 40px;
     height: 40px;
-    border: 1.5px solid var(--border-color);
+    background-color: var(--box-bg);
     border-radius: 50%;
     display: flex;
     justify-content: center;
@@ -70,11 +72,11 @@ header {
 }
 
 .num-item {
-    font-family: 'Dancing Script', cursive;
+    font-family: 'BM HANNA Air', sans-serif;
     font-size: 28px;
-    font-weight: 700;
+    font-weight: 100;
     text-decoration: none;
-    color: var(--text-color);
+    color: var(--second-text-color);
     transition: color 0.3s ease, transform 0.3s ease;
 }
 
@@ -109,18 +111,15 @@ header {
     height: 100%;
     border: 1.5px solid var(--border-color);
     border-radius: 12px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    overflow: hidden;
     background-color: var(--box-bg);
     transition: width 0.3s ease, height 0.3s ease;
 }
 
-.web-box span {
-    font-family: 'Dancing Script', cursive;
-    font-size: clamp(36px, 5vw, 64px);
-    font-weight: 700;
-    letter-spacing: 2px;
+.web-box iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
 }
 
 /* 우측 그룹 (빈 공간 제거 및 위/아래 양 끝 배치) */
@@ -131,7 +130,7 @@ header {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    padding: 80px 0 0 50px;
+    padding: 80px 0 0 0;
 }
 
 /* 3. XD와 Gemini (테두리 없는 리스트) */
@@ -145,6 +144,7 @@ header {
     display: flex;
     flex-direction: column;
     gap: 12px;
+    color: var(--text-color);
 }
 
 .tools-list li {
@@ -158,24 +158,23 @@ header {
 .qr-section {
     display: flex;
     flex-direction: column;
-    align-items: flex-end; /* 데스크탑에서는 우측 끝 정렬 */
+    align-items: flex-end;
     gap: 8px;
 }
 
 .before-text {
-    width: 65px; /* QR 박스 너비(65px)와 동일하게 맞추어 완벽한 중앙 정렬 보장 */
+    width: 65px;
     font-family: 'Montserrat', sans-serif;
     font-size: 0.8em;
     font-weight: 300;
     font-style: italic;
     letter-spacing: 0.5px;
-    text-align: center; /* QR박스 기준 가운데 정렬 */
+    text-align: center;
 }
 
 .qr-box {
     width: 65px;
     height: 65px;
-    border: 1.5px soli?d var(--border-color);
     border-radius: 8px;
     display: flex;
     justify-content: center;
@@ -189,24 +188,26 @@ header {
     color: var(--border-color);
 }
 
-/* 흑백 전환 버튼 스타일 */
+/* 흑백 전환 버튼 스타일 (테두리 및 포커스 아웃라인 제거) */
 #theme-toggle {
     position: absolute;
     top: 20px;
     left: 30px;
     background: none;
-    border: 1px solid var(--border-color);
+    border: none;
+    outline: none;
+    background-color: var(--box-bg);
     padding: 6px 14px;
     border-radius: 20px;
     font-size: 12px;
     cursor: pointer;
-    color: var(--text-color);
+    color: var(--second-text-color);
     font-family: 'Noto Sans KR', sans-serif;
     transition: all 0.3s ease;
 }
 
 #theme-toggle:hover {
-    background-color: var(--text-color);
+    background-color: var(--second-text-color);
     color: var(--bg-color);
 }
 
@@ -223,7 +224,7 @@ header {
     justify-content: center;
     align-items: center;
     text-decoration: none;
-    color: var(--text-color);
+    color: var(--second-text-color);
     background-color: var(--box-bg);
     font-size: 20px;
     box-shadow: 0 4px 10px rgba(0,0,0,0.05);
@@ -232,7 +233,7 @@ header {
 
 #scroll-top-btn:hover {
     transform: translateY(-4px);
-    background-color: var(--text-color);
+    background-color: var(--second-text-color);
     color: var(--bg-color);
 }
 
@@ -274,7 +275,6 @@ header {
         margin-right: 0;
     }
 
-    /* 모바일 우측 그룹 빈 공간(연두색/보라색 영역) 제거 및 밀착 정렬 */
     .right-group {
         width: 100%;
         height: auto;
@@ -298,7 +298,6 @@ header {
         gap: 8px;
     }
 
-    /* 모바일에서 before와 QR박스를 중앙 정렬하면서 상하 밀착 */
     .qr-section {
         align-items: center;
         gap: 6px;

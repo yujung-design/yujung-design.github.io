@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ko">
+<html lang="ko" data-theme="monotone">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,25 +11,25 @@
 <body>
 
     <!-- 흑백 전환 버튼 -->
-    <button id="theme-toggle" aria-label="흑백 전환">mode</button>
+    <button id="theme-toggle" aria-label="mode">mode</button>
 
     <div class="container">
-        <!-- 상단 숫자 영역 -->
+        <!-- 상단 숫자 영역 (target을 통해 iframe과 연동) -->
         <header id="top-header">
             <nav class="number-nav">
-                <DIV class="num-item-box"><a href="#1" class="num-item">1</a></DIV>
-                <DIV class="num-item-box"><a href="#2" class="num-item">2</a></DIV>
-                <DIV class="num-item-box"><a href="#3" class="num-item">3</a></DIV>
-                <DIV class="num-item-box"><a href="#4" class="num-item">4</a></DIV>
+                <div class="num-item-box"><a href="page1.html" target="web-frame" class="num-item">1</a></div>
+                <div class="num-item-box"><a href="page2.html" target="web-frame" class="num-item">2</a></div>
+                <div class="num-item-box"><a href="page3.html" target="web-frame" class="num-item">3</a></div>
+                <div class="num-item-box"><a href="page4.html" target="web-frame" class="num-item">4</a></div>
             </nav>
         </header>
 
         <!-- 메인 컨텐츠 영역 -->
         <main class="main-content">
-            <!-- 2. WEB 영역 (화면 크기에 비례하여 크기 조절) -->
+            <!-- 2. WEB 영역 (iframe을 통해 버튼 클릭 시 이 안의 내용만 가볍게 변경됨) -->
             <section class="web-section">
                 <div class="web-box">
-                    <span>WEB</span>
+                    <iframe src="page1.html" name="web-frame" title="포트폴리오 뷰어"></iframe>
                 </div>
             </section>
 
@@ -45,7 +45,6 @@
 
                 <!-- 4. before 및 QR코드 영역 -->
                 <section class="qr-section">
-                    <!-- <span class="before-text">before</span> -->
                     <div class="qr-box">
                         <div class="qr-placeholder">QR</div>
                     </div>
