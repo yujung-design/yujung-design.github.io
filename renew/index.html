@@ -14,31 +14,32 @@
     <button id="theme-toggle" aria-label="mode">mode</button>
 
     <div class="container">
-        <!-- 상단 숫자 영역 (target을 통해 iframe과 연동) -->
+        <!-- 상단 숫자 영역 -->
         <header id="top-header">
             <nav class="number-nav">
-                <div class="num-item-box"><a href="page1.html" target="web-frame" class="num-item">1</a></div>
-                <div class="num-item-box"><a href="page2.html" target="web-frame" class="num-item">2</a></div>
-                <div class="num-item-box"><a href="page3.html" target="web-frame" class="num-item">3</a></div>
-                <div class="num-item-box"><a href="page4.html" target="web-frame" class="num-item">4</a></div>
+                <div class="num-item-box"><a href="#" class="num-item active" data-page="1">1</a></div>
+                <div class="num-item-box"><a href="#" class="num-item" data-page="2">2</a></div>
+                <div class="num-item-box"><a href="#" class="num-item" data-page="3">3</a></div>
+                <div class="num-item-box"><a href="#" class="num-item" data-page="4">4</a></div>
             </nav>
         </header>
 
         <!-- 메인 컨텐츠 영역 -->
         <main class="main-content">
-            <!-- 2. WEB 영역 (iframe을 통해 버튼 클릭 시 이 안의 내용만 가볍게 변경됨) -->
+            <!-- 2. WEB 영역 (iframe) -->
             <section class="web-section">
                 <div class="web-box">
-                    <iframe src="page1.html" name="web-frame" title="포트폴리오 뷰어"></iframe>
+                    <iframe id="web-frame" src="https://jeju-nyangtueo-yeohaeng-webaeb--freeutleeyj.replit.app/" name="web-frame" title="포트폴리오 뷰어"></iframe>
                 </div>
             </section>
 
-            <!-- 우측 그룹 (XD, Gemini 및 before/QR) -->
+            <!-- 우측 그룹 (버튼에 따라 내용이 바뀌는 li 리스트) -->
             <div class="right-group">
-                <!-- 3. XD와 Gemini (테두리 없는 리스트) -->
+                <!-- 3. 사용 프로그램 리스트 -->
                 <section class="tools-section">
-                    <ul class="tools-list">
-                        <li>XD</li>
+                    <ul class="tools-list" id="tools-list">
+                        <!-- JS를 통해 1번 페이지 기본 내용이 동적으로 들어갑니다 -->
+                        <li>Replit</li>
                         <li>Gemini</li>
                     </ul>
                 </section>
