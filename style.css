@@ -168,15 +168,16 @@ header {
     padding-left: 20px;
     display: flex;
     flex-direction: column;
-    gap: 12px;
+    gap: 10px;
     color: var(--text-color);
 }
 
 .tools-list li {
     font-family: 'Noto Sans KR', sans-serif;
-    font-size: 0.9em;
+    font-size: 0.6em;
     font-weight: 700;
-    letter-spacing: 1px;
+    letter-spacing: 1x;
+    line-height: 105%;
 }
 
 /* Before 버튼 스타일 */
@@ -302,11 +303,11 @@ header {
         align-items: center;
         padding-left: 0;
         list-style: none;
-        gap: 8px;
+        gap: 4px;
     }
 
     .tools-list li {
-        font-size: 0.6em;        
+        font-size: 0.6vh;        
     }
     
 
