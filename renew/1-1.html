@@ -1,0 +1,536 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+    <title>🐾 포근한 제주 투어 & 정산 🍊</title>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "surface": "#fcf7ff",
+                        "background": "#fcf7ff",
+                        "surface-container": "#ffffff",
+                        "surface-container-low": "#f4ecfc",
+                        "surface-container-high": "#e9dcf5",
+                        "primary": "#ff477e",
+                        "primary-container": "#ff7597",
+                        "on-primary": "#ffffff",
+                        "secondary": "#00b894",
+                        "tertiary": "#00cec9",
+                        "on-surface": "#2d3436",
+                        "on-surface-variant": "#636e72",
+                    },
+                    borderRadius: { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" },
+                    fontFamily: { "body-md": ["Plus Jakarta Sans"] }
+                }
+            }
+        }
+    </script>
+    <style>
+        body { font-family: 'Plus Jakarta Sans', 'Apple SD Gothic Neo', sans-serif; background: linear-gradient(135deg, #fce4ec 0%, #e8f5e9 50%, #e0f7fa 100%); color: #2d3436; margin: 0; padding: 0; min-height: 100vh; }
+        ::-webkit-scrollbar { display: none; }
+        
+        .neon-btn-primary {
+            background: linear-gradient(135deg, #ff477e 0%, #ff7597 50%, #00cec9 100%);
+            color: #ffffff;
+            box-shadow: 0 0 15px rgba(255, 71, 126, 0.4);
+            border: 2px solid #ffffff;
+        }
+        .neon-btn-info {
+            background: linear-gradient(135deg, #0984e3, #00cec9);
+            color: #ffffff;
+            box-shadow: 0 0 12px rgba(0, 206, 201, 0.4);
+            border: 2px solid #ffffff;
+        }
+        .neon-btn-route {
+            background: linear-gradient(135deg, #ff7597, #ff477e);
+            color: #ffffff;
+            box-shadow: 0 0 12px rgba(255, 117, 151, 0.4);
+            border: 2px solid #ffffff;
+        }
+        .neon-btn-snack {
+            background: linear-gradient(135deg, #fd79a8, #e84393);
+            color: #ffffff;
+            box-shadow: 0 0 10px rgba(253, 121, 168, 0.4);
+            border: 2px solid #ffffff;
+        }
+        
+        .stay-badge {
+            background: linear-gradient(135deg, #ffeaa7, #fab1a0);
+            color: #d35400;
+            padding: 2px 8px;
+            border-radius: 6px;
+            font-weight: 800;
+            display: inline-block;
+        }
+        
+        .flight-highlight-box {
+            background: linear-gradient(135deg, #fff0f3, #ffe3e8);
+            border: 2px solid #ff7597;
+            box-shadow: 0 0 12px rgba(255, 117, 151, 0.3);
+            border-radius: 12px;
+            padding: 12px;
+            margin-bottom: 12px;
+        }
+
+        .important-notice {
+            background: #fff8e1;
+            border-left: 4px solid #ffb300;
+            padding: 6px 10px;
+            border-radius: 6px;
+            margin-top: 4px;
+            font-weight: 700;
+            color: #b7791f;
+        }
+
+        .hi-super { background-color: #ffeaa7; color: #d63031; padding: 1px 5px; border-radius: 4px; font-weight: 800; }
+        .hi-zone8 { background-color: #74b9ff; color: #ffffff; padding: 1px 5px; border-radius: 4px; font-weight: 800; }
+        .hi-fuel { background-color: #55efc4; color: #2d3436; padding: 1px 5px; border-radius: 4px; font-weight: 800; }
+        .hi-aqua { background-color: #a29bfe; color: #ffffff; padding: 1px 5px; border-radius: 4px; font-weight: 800; }
+        .hi-ghibli { background-color: #fd79a8; color: #ffffff; padding: 1px 5px; border-radius: 4px; font-weight: 800; }
+        .hi-brewery { background-color: #ffeaa7; color: #e17055; padding: 1px 5px; border-radius: 4px; font-weight: 800; }
+
+        /* 🖨️ PDF 인쇄 전용 스타일 최적화 */
+        @media print {
+            @page {
+                size: A4;
+                margin: 15mm 15mm 15mm 15mm;
+            }
+            body {
+                background: #ffffff !important;
+                color: #2d3436 !important;
+            }
+            header {
+                position: absolute !important;
+                top: 0 !important;
+                box-shadow: none !important;
+                border-bottom: 1px solid #ddd !important;
+                background: #ffffff !important;
+            }
+            main {
+                padding-top: 20px !important;
+                padding-bottom: 20px !important;
+            }
+            nav {
+                display: none !important;
+            }
+            .backdrop-blur-md, .backdrop-blur-xl {
+                backdrop-filter: none !important;
+                background: #ffffff !important;
+                border: 1px solid #e2e8f0 !important;
+                box-shadow: none !important;
+            }
+            .print-card {
+                break-inside: avoid;
+                page-break-inside: avoid;
+                margin-bottom: 15px;
+            }
+        }
+    </style>
+</head>
+<body class="bg-surface text-on-surface flex flex-col antialiased">
+
+<!-- 상단 헤더 -->
+<header class="fixed top-0 inset-x-0 z-50 bg-white/80 backdrop-blur-xl shadow-sm border-b border-pink-100">
+    <div class="h-16 px-4 flex items-center justify-between max-w-lg mx-auto">
+        <div class="flex items-center gap-2">
+            <div class="w-9 h-9 rounded-xl bg-pink-100 flex items-center justify-center text-pink-600 font-bold">🐾</div>
+            <div class="flex flex-col">
+                <span class="text-[10px] text-pink-600 tracking-wider uppercase font-extrabold">제주 냥투어</span>
+                <h1 class="text-xs text-on-surface font-bold">혜정 & 유정 캔따개 패스</h1>
+            </div>
+        </div>
+        
+        <div class="flex items-center gap-2">
+            <button onclick="openSnackModal()" class="px-3 py-1.5 rounded-full neon-btn-snack text-[11px] font-extrabold flex items-center gap-1 active:scale-95 transition-all cursor-pointer">
+                <span>🐟 고양이 간식</span>
+            </button>
+            <div id="ddayBadge" class="text-xs font-bold px-3 py-1.5 rounded-full bg-gradient-to-r from-pink-100 to-emerald-100 text-pink-700 shadow-sm border border-pink-200">계산 중...</div>
+        </div>
+    </div>
+</header>
+
+<!-- 메인 컨텐츠 영역 -->
+<main class="flex flex-col relative w-full pt-20 pb-28 px-4 max-w-lg mx-auto space-y-6">
+
+    <!-- ✈️ 비행시간 및 입출국 안내 카드 -->
+    <div class="bg-white/90 backdrop-blur-md rounded-2xl p-5 shadow-md border-2 border-pink-200 space-y-3 print-card">
+        <div class="flex items-center justify-between">
+            <h3 class="text-base font-bold text-pink-600 flex items-center gap-2">✈️ 티웨이항공 비행시간 안내</h3>
+            
+            <div class="flex gap-1.5">
+                <button onclick="openRouteModal()" class="px-2.5 py-1.5 rounded-lg neon-btn-route text-[11px] font-bold flex items-center gap-1 active:scale-95 transition-all cursor-pointer">
+                    <span class="material-symbols-outlined text-[14px]">directions_transit</span>
+                    <span>출발 노선</span>
+                </button>
+                <button onclick="openModal()" class="px-2.5 py-1.5 rounded-lg neon-btn-info text-[11px] font-bold flex items-center gap-1 active:scale-95 transition-all cursor-pointer">
+                    <span class="material-symbols-outlined text-[14px]">info</span>
+                    <span>국내선 절차</span>
+                </button>
+            </div>
+        </div>
+        
+        <!-- 가는 편 강조 박스 (예약번호 마스킹) -->
+        <div class="flight-highlight-box">
+            <div class="flex justify-between items-center font-extrabold text-xs text-pink-600 mb-1">
+                <div>🛫 가는 편 (T'way Air TW 715)</div>
+                <div class="bg-pink-500 text-white px-2 py-0.5 rounded text-[10px]">9월 6일 (일)</div>
+            </div>
+            <div class="text-sm font-black text-on-surface flex justify-between items-center">
+                <div>김포공항 (GMP) <strong class="text-pink-600 text-base">01:00 오후</strong></div>
+                <div>➔</div>
+                <div>제주공항 (CJU) <strong class="text-pink-600 text-base">02:15 오후</strong></div>
+            </div>
+            <div class="text-[11px] text-on-surface-variant mt-1">예약 번호: 1769****** (PNR: U3L***)</div>
+        </div>
+
+        <!-- 오는 편 강조 박스 (예약번호 마스킹) -->
+        <div class="flight-highlight-box" style="background: linear-gradient(135deg, #e8f8f5, #d1f2eb); border-color: #00b894;">
+            <div class="flex justify-between items-center font-extrabold text-xs text-emerald-700 mb-1">
+                <div>🛬 오는 편 (T'way Air TW 734)</div>
+                <div class="bg-emerald-500 text-white px-2 py-0.5 rounded text-[10px]">9월 10일 (목)</div>
+            </div>
+            <div class="text-sm font-black text-on-surface flex justify-between items-center">
+                <div>제주공항 (CJU) <strong class="text-emerald-700 text-base">08:30 오후</strong></div>
+                <div>➔</div>
+                <div>김포공항 (GMP) <strong class="text-emerald-700 text-base">09:45 오후</strong></div>
+            </div>
+            <div class="text-[11px] text-on-surface-variant mt-1">예약 번호: 1769****** (PNR: BSX***)</div>
+        </div>
+    </div>
+
+    <!-- 🚗 렌터카 예약 정보 (예약번호 마스킹) -->
+    <div class="bg-white/90 backdrop-blur-md rounded-2xl p-5 shadow-md border-2 border-emerald-200 space-y-3 print-card">
+        <h3 class="text-base font-bold text-emerald-600 flex items-center gap-2">🚗 무지개렌트카 캐스퍼 F/L 예약 정보</h3>
+        <div class="text-xs space-y-1.5 text-on-surface">
+            <div>• <strong>예약번호:</strong> OR23****** (예약자: 이** 또는 혜정)</div>
+            <div>• <strong>대여 기간:</strong> 2026.9.6(일) 오후 2시 30분 ~ 2026.9.10(목) 오후 7시 00분</div>
+            <div>• <strong>차량 정보:</strong> 캐스퍼 F/L / 휘발유 (자차보험: <span class="hi-super">슈퍼무제한</span>)</div>
+            <div>• <strong>업체 주소:</strong> 제주특별자치도 제주시 제성길 30 (연락처: 064-710-1600)</div>
+            <div>• <strong>셔틀탑승장소:</strong> 제주공항 1층 5번 게이트 렌터카 하우스 <span class="hi-zone8">8구역</span> 1번</div>
+            <div class="pt-1 border-t border-emerald-100 mt-2 space-y-1 text-emerald-700 font-semibold text-[11px]">
+                <div>💡 차량 인수 시 운전면허증 필수 지참</div>
+                <div>💡 차량 인수 전 외관 사진 및 동영상 촬영 필수</div>
+                <div>💡 반납 시 주행거리 확인 후 <span class="hi-fuel">유류비</span> 정산(추가 지불) 필요</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 1. 필수 준비물 체크리스트 -->
+    <div class="bg-white/90 backdrop-blur-md rounded-2xl p-5 shadow-sm border border-pink-100 space-y-3 print-card">
+        <h3 class="text-base font-bold text-pink-600 flex items-center gap-2">🎒 필수 준비물 & 옷차림 가이드</h3>
+        <ul class="text-xs space-y-2 text-on-surface-variant list-disc pl-4">
+            <li><strong>핵심 필수증명:</strong> <strong>운전면허증</strong> (실물 필수 지참)</li>
+            <li><strong>물놀이 용품:</strong> 수영복, 튜브, 개인 스노클링 장비, <span class="hi-aqua">아쿠아슈즈</span> (숙소 미구비)</li>
+            <li><strong>날씨 대비:</strong> 우산/양산 필수, 아침저녁 쌀쌀한 날씨 대비 <strong>가벼운 가디건/바람막이 아우터</strong></li>
+            <li><strong>프로그램용:</strong> <strong>미로객잔</strong> 요가(오전 6시) 및 휴식용 레깅스/트레이닝 복장</li>
+            <li><strong>기타:</strong> 수건(숙소 구비이나 비치타월 추천), 편안한 운동화, 속옷·양말 넉넉히</li>
+        </ul>
+    </div>
+
+    <!-- 2. 비용 정산 완료 내역 -->
+    <div class="bg-gradient-to-br from-pink-50 via-emerald-50 to-teal-50 rounded-2xl p-5 shadow-sm border border-dashed border-pink-300 space-y-3 print-card">
+        <h3 class="text-base font-bold text-pink-600 flex items-center gap-2">💰 여행 비용 정산 완료 내역</h3>
+        <div class="text-xs space-y-1.5 text-on-surface">
+            <div>• <strong>항공권 (티웨이 x2):</strong> KRW 139,359</div>
+            <div>• <strong>고양이 간식:</strong> 51,540원</div>
+            <div>• <strong>평대베를린 (2박):</strong> 280,000원 (<div class="stay-badge">9/6 입실</div> ~ <div class="stay-badge">9/8 퇴실</div>)</div>
+            <div>• <strong>미로객잔 (연박 2박):</strong> 196,000원 (<div class="stay-badge">9/8 입실</div> ~ <div class="stay-badge">9/10 퇴실</div>)</div>
+            <div>• <strong>렌터카 캐스퍼 F/L 대여료:</strong> 161,504원</div>
+            <div class="pt-1 font-bold text-pink-600">• 사전 총지출액 합계: 828,403원</div>
+            <hr class="border-pink-200 my-2">
+            <div class="text-sm font-extrabold text-pink-600">✨ 1인당 최종 분할 금액: 414,202원 (지출 총액 기준)</div>
+            <div class="text-xs text-emerald-700 font-bold bg-emerald-100/80 p-2 rounded-lg mt-1 border border-emerald-200">✅ [정산 완료] 이유정 님이 이혜정 님께 사전 정산금 및 렌터카 비용 전액 송금 완료! <br>🎉 <strong>출발 전 추가 발생 금액: 0원</strong></div>
+        </div>
+        <div class="text-xs text-on-surface-variant pt-2 border-t border-pink-200">
+            <div class="font-bold mb-1">🎟️ 주요 현장 입장권 (1인 기준)</div>
+            <div>• <span class="hi-ghibli">스튜디오 지브리전 in 제주</span>: 성인 22,000원</div>
+            <div>• <strong>제주 캣월드</strong>: 약 10,000원 ~ 12,000원 선</div>
+        </div>
+    </div>
+
+    <!-- 3. 스튜디오 지브리전 정보 -->
+    <div class="bg-white/90 backdrop-blur-md rounded-2xl p-5 shadow-sm border border-pink-100 space-y-2 print-card">
+        <h3 class="text-base font-bold text-pink-600 flex items-center gap-2">🎨 <span class="hi-ghibli">스튜디오 지브리전 in 제주</span></h3>
+        <div class="text-xs text-on-surface-variant">• <strong>위치:</strong> 제주 제주시 구좌읍 비자림로 1183 (동화아트센터)</div>
+        <div class="text-xs text-on-surface-variant">• <strong>운영 시간:</strong> 09:00 ~ 19:00 (입장 마감 오후 6시)</div>
+        <div class="text-xs text-on-surface-variant">• <strong>관람일정:</strong> 9월 8일(화) 오후 동선에 포함</div>
+    </div>
+
+    <!-- 4. 숙소 안내 -->
+    <div class="bg-white/90 backdrop-blur-md rounded-2xl p-5 shadow-sm border border-pink-100 space-y-3 print-card">
+        <h3 class="text-base font-bold text-pink-600 flex items-center gap-2">🏨 숙소 안내</h3>
+        <div class="text-xs space-y-2 text-on-surface-variant">
+            <div><strong>[1~2박] 평대베를린</strong> (구좌읍) - <div class="stay-badge">입실 17:00</div> / <div class="stay-badge">퇴실 11:00</div></div>
+            <div><strong>[3~4박] 미로객잔</strong> (표선면 가시리) - <div class="stay-badge">입실 16:00</div> / <div class="stay-badge">퇴실 11:00</div> (조식 제공)</div>
+            <div class="text-pink-600 font-semibold">• <strong>미로객잔</strong> 프로그램: 힐링 요가 (매일 오전 6시 / 유료) / 감성 플라워 레슨 (매일 오후 8시 / 유료)</div>
+        </div>
+    </div>
+
+    <!-- 5. 4박 5일 상세 일정 -->
+    <div class="bg-white/90 backdrop-blur-md rounded-2xl p-5 shadow-sm border border-pink-100 space-y-4 print-card">
+        <h3 class="text-base font-bold text-pink-600 flex items-center gap-2">📅 4박 5일 상세 일정표</h3>
+        
+        <div class="space-y-4 text-xs">
+            <div class="p-3 bg-pink-50/70 rounded-xl border border-pink-200 space-y-1 print-card">
+                <div class="font-bold text-pink-600 mb-1">🌿 1일차 (9/6 일요일): 입도 & 렌터카 인수 & 장보기 & 미르담 & 맥파이 맥주포장 & 평대베를린</div>
+                <div>• <strong class="text-pink-600">11:00</strong> 공항 2시간 전 도착 목표로 자택 출발</div>
+                <div>• <strong class="text-pink-600">13:00</strong> 김포공항 도착 및 탑승 수속 (출발: <strong class="text-pink-600">01:00 오후</strong>)</div>
+                <div>• <strong class="text-pink-600">14:05</strong> 제주공항 도착</div>
+                <div>• <strong class="text-pink-600">14:20 ~ 14:40</strong> 제주공항 1층 5번 게이트 ➔ 렌터카 하우스 <span class="hi-zone8">8구역</span> 1번 승차장에서 무지개렌트카 셔틀버스 탑승</div>
+                <div>• <strong class="text-pink-600">14:30 이후</strong> 무지개렌트카 도착, <strong>운전면허증 제시</strong> 및 계약 진행</div>
+                <div>• <strong class="text-emerald-600">⚠️ 중요: 차량 타기 전 외관 및 흠집 동영상/사진 꼼꼼히 촬영하기!</strong></div>
+                <div class="important-notice">⛽ [<span class="hi-fuel">유류비</span> 정산 대비] 인수 직후 계기판의 <strong>휘발유(연료) 잔여량과 주행거리 사진</strong> 꼭 찍어두기!</div>
+                <div>• <strong class="text-pink-600">15:00 ~ 15:30</strong> 인근 마트/다이소/편의점 경유: 생수, 이온음료, 일회용 접시 등 장보기</div>
+                <div>• <strong class="text-pink-600">15:30 ~ 16:00</strong> <strong>미르담</strong> 먼저 들러 향긋한 커피 타임 즐기기</div>
+                <div>• <strong class="text-pink-600">16:00 ~ 16:40</strong> 💡 <strong>맥파이루잉컴퍼니 <span class="hi-brewery">양조장</span> & 탭룸</strong> (회천동) 방문 ➔ 숙소에서 마실 <strong>수제 맥주 포장(테이크아웃)</strong> 완료!</div>
+                <div class="important-notice">🍺 [중요 체크] 숙소에서 마실 생맥주/캔맥주 포장 여부 확인 및 든든하게 챙기기!</div>
+                <div>• 17:00 <div class="stay-badge">평대베를린 입실</div> (포장해온 맥주와 함께 여유로운 첫날 밤)</div>
+                <div>• 19:00 근처 맛집(평대스낵, 명진전복 등)에서 저녁 식사</div>
+            </div>
+
+            <div class="p-3 bg-emerald-50/70 rounded-xl border border-emerald-200 space-y-1 print-card">
+                <div class="font-bold text-emerald-700 mb-1">🌿 2일차 (9/7 월요일): 카페리 & 제주냥이 & 세화비치서프샵 (물놀이)</div>
+                <div>• 09:00 아침 식사 및 여유로운 오전 시간</div>
+                <div>• 11:00 오픈 시간에 맞춰 구좌읍 <strong>제주냥이</strong> 및 인근 <strong>카페리</strong> 방문 (도보 탐방 및 츄르 타임)</div>
+                <div>• 12:30 가벼운 점심 식사</div>
+                <div>• <strong class="text-emerald-700">13:00 ~ 13:30</strong> 평대베를린 숙소 복귀 후 수영복, <span class="hi-aqua">아쿠아슈즈</span>, 비치타월 등 물놀이 용품 챙기기 및 환복</div>
+                <div>• 13:30 <strong>세화비치서프샵</strong> 방문 및 세화해변 스노클링 (<span class="hi-aqua">아쿠아슈즈</span> 착용) & 서프샵 투어</div>
+                <div>• 18:00 저녁 식사 후 <strong>평대베를린</strong> 복귀</div>
+            </div>
+
+            <div class="p-3 bg-pink-50/70 rounded-xl border border-pink-200 space-y-1 print-card">
+                <div class="font-bold text-pink-600 mb-1">🌿 3일차 (9/8 화요일): 구좌읍 점심 맛집 & <span class="hi-ghibli">지브리전</span> ➔ 미로객잔 입실</div>
+                <div>• 09:00 아침 식사 ➔ 11:00 <div class="stay-badge">평대베를린 퇴실</div></div>
+                <div>• 11:30 구좌읍 인근 맛집(평대스낵, 명진전복 등)에서 맛있는 점심 식사 든든하게 하기</div>
+                <div>• 13:30 비자림로에 위치한 <span class="hi-ghibli">스튜디오 지브리전 in 제주</span> 관람 (차량 이동으로 여유롭게!)</div>
+                <div>• 16:30 표선면 가시리 <strong>미로객잔</strong>으로 이동</div>
+                <div>• 17:00 미로객잔 <div class="stay-badge">입실 완료</div></div>
+                <div>• 20:00 <strong>미로객잔</strong> 감성 플라워 레슨 참여 (유료)</div>
+            </div>
+
+            <div class="p-3 bg-teal-50/70 rounded-xl border border-teal-200 space-y-1 print-card">
+                <div class="font-bold text-teal-700 mb-1">🌿 4일차 (9/9 수요일): 요가 & 제주 캣월드 & 인근 맛집 식사</div>
+                <div>• 06:00 <strong>미로객잔</strong> 이른 아침 힐링 요가 (유료)</div>
+                <div>• 08:30 <strong>미로객잔</strong> 무료 조식 ➔ 10:30 <strong>제주 캣월드</strong> 투어</div>
+                <div>• 13:30 점심 식사</div>
+                <div>• 15:00 서귀포 남쪽 여유로운 시간 ➔ 근처 <strong>인근 식당에서 맛있는 현지식 식사</strong> 즐기기</div>
+                <div>• 20:00 <strong>미로객잔</strong> 플라워 레슨 참여 (유료)</div>
+            </div>
+
+            <div class="p-3 bg-emerald-50/70 rounded-xl border border-emerald-200 space-y-1 print-card">
+                <div class="font-bold text-emerald-700 mb-1">🌿 5일차 (9/10 목요일): 요가 & 제주 캣월드 (or 돌코리숲) & 렌터카 반납 & 귀가</div>
+                <div>• 06:00 마지막 날 모닝 요가 (유료) ➔ 08:30 <strong>미로객잔</strong> 마지막 조식</div>
+                <div>• 11:00 <div class="stay-badge">미로객잔 퇴실</div> 후 이동</div>
+                <div>• 11:30 🐾 **제주 캣월드 재방문 (or 돌코리숲)** (귀여운 냥이들과 마지막 아쉬움 달래기 및 츄르 타임)</div>
+                <div>• 13:30 여유로운 점심 식사 후 공항 방향으로 이동</div>
+                <div>• <strong class="text-emerald-700">17:00 ~ 17:30</strong> 무지개렌트카로 이동 (제주 제성길 30)</div>
+                <div>• <strong class="text-emerald-700">17:30 ~ 17:45 차량 반납 및 주행거리·잔여 연료량 확인 후 <span class="hi-fuel">유류비</span> 정산(추가 지불) 완료하기</strong></div>
+                <div>• 17:45 렌터카 업체 셔틀버스 타고 제주공항 3층(출발층)으로 이동</div>
+                <div>• <strong class="text-emerald-700">18:30</strong> 공항 도착 및 탑승 수속 (출발: <strong class="text-emerald-700">08:30 오후</strong>)</div>
+                <div>• <strong class="text-emerald-700">21:45</strong> 제주공항 출발 (TW734) ➔ 김포공항 도착 (<strong class="text-emerald-700">09:45 오후</strong>) 안전 귀가</div>
+            </div>
+        </div>
+    </div>
+
+</main>
+
+<!-- 🐟 고양이 간식 리스트 모달 -->
+<div id="snackModal" class="fixed inset-0 z-50 bg-black/60 backdrop-blur-sm hidden flex items-center justify-center p-4">
+    <div class="bg-white rounded-2xl max-w-md w-full p-6 space-y-4 shadow-2xl border border-pink-200 relative animate-in fade-in zoom-in duration-200">
+        <div class="flex justify-between items-center border-b border-pink-100 pb-3">
+            <h3 class="text-base font-bold text-pink-600 flex items-center gap-2">🐟 고양이 간식 및 용품 리스트</h3>
+            <button onclick="closeSnackModal()" class="w-8 h-8 rounded-full bg-pink-50 flex items-center justify-center text-on-surface-variant hover:bg-pink-100 font-bold cursor-pointer">✕</button>
+        </div>
+        
+        <div class="text-xs space-y-2 text-on-surface max-h-[60vh] overflow-y-auto pr-1">
+            <div class="p-2.5 bg-pink-50 rounded-xl flex justify-between items-center border border-pink-100">
+                <span>• 호랑이 순택스틱 치킨 (8g × 30스틱)</span>
+                <span class="font-bold text-pink-600">7,400원</span>
+            </div>
+            <div class="p-2.5 bg-pink-50 rounded-xl flex justify-between items-center border border-pink-100">
+                <span>• 마법의 스네이크향료 십신안정 스프레이 (1개)</span>
+                <span class="font-bold text-pink-600">4,900원</span>
+            </div>
+            <div class="p-2.5 bg-pink-50 rounded-xl flex justify-between items-center border border-pink-100">
+                <span>• 그리니즈 펠라인 이빨자간 덴탈트릿 (1개)</span>
+                <span class="font-bold text-pink-600">8,650원</span>
+            </div>
+            <div class="p-2.5 bg-pink-50 rounded-xl flex justify-between items-center border border-pink-100">
+                <span>• 비타크래프트 비타스틱 오메가3 (3개입 묶음)</span>
+                <span class="font-bold text-pink-600">3,500원</span>
+            </div>
+            <div class="p-2.5 bg-pink-50 rounded-xl flex justify-between items-center border border-pink-100">
+                <span>• 비타크래프트 비타스틱 대구&연어 (1개 묶음)</span>
+                <span class="font-bold text-pink-600">2,200원</span>
+            </div>
+            <div class="p-2.5 bg-pink-50 rounded-xl flex justify-between items-center border border-pink-100">
+                <span>• 1+1 퓨리나 파디믹스 (각 60g+60g)</span>
+                <span class="font-bold text-pink-600">5,200원</span>
+            </div>
+            <div class="p-2.5 bg-pink-50 rounded-xl flex justify-between items-center border border-pink-100">
+                <span>• 이나바 챠오 츄르 4P (4개입 묶음)</span>
+                <span class="font-bold text-pink-600">1,990원</span>
+            </div>
+            <div class="p-2.5 bg-pink-50 rounded-xl flex justify-between items-center border border-pink-100">
+                <span>• 마이베프 별자리스틱 (3개 구성)</span>
+                <span class="font-bold text-pink-600">17,700원</span>
+            </div>
+        </div>
+
+        <button onclick="closeSnackModal()" class="w-full h-11 rounded-xl bg-gradient-to-r from-pink-500 to-emerald-500 text-white text-xs font-bold shadow-md hover:opacity-90 transition-all cursor-pointer">
+            확인 완료
+        </button>
+    </div>
+</div>
+
+<!-- 🛫 출발 노선 안내 모달 -->
+<div id="routeModal" class="fixed inset-0 z-50 bg-black/60 backdrop-blur-sm hidden flex items-center justify-center p-4">
+    <div class="bg-white rounded-2xl max-w-md w-full p-6 space-y-4 shadow-2xl border border-pink-200 relative animate-in fade-in zoom-in duration-200">
+        <div class="flex justify-between items-center border-b border-pink-100 pb-3">
+            <h3 class="text-base font-bold text-pink-600 flex items-center gap-2">🚇 김포공항 출발 노선 안내 (2시간 전 도착)</h3>
+            <button onclick="closeRouteModal()" class="w-8 h-8 rounded-full bg-pink-50 flex items-center justify-center text-on-surface-variant hover:bg-pink-100 font-bold cursor-pointer">✕</button>
+        </div>
+        
+        <div class="text-xs space-y-3 text-on-surface-variant max-h-[60vh] overflow-y-auto pr-1">
+            <div class="p-3 bg-pink-50 rounded-xl space-y-1.5 border border-pink-200">
+                <div class="font-bold text-pink-600 text-sm">📍 혜정이네 출발 (성북구 동선동1가 85-40 4층)</div>
+                <div>• <strong>기준 공항 도착:</strong> 11:00까지 김포공항 도착 (출발 2시간 전)</div>
+                <div>• <strong>추천 대중교통 경로 (약 45~50분 소요):</strong></div>
+                <div class="pl-2">1. 도보로 <strong>성신여대입구역</strong>(4호선) 이동</div>
+                <div class="pl-2">2. 4호선 탑승 ➔ <strong>동대문역</strong>에서 1호선 환승 (또는 충무로역에서 5호선 환승)</div>
+                <div class="pl-2">3. <strong>김포공항역</strong> 하차 후 국내선 청사 도보 이동</div>
+                <div class="text-[11px] text-pink-500 font-semibold mt-1">💡 여유로운 이동을 위해 오전 10:00~10:10 사이 출발을 권장합니다!</div>
+            </div>
+
+            <div class="p-3 bg-emerald-50 rounded-xl space-y-1.5 border border-emerald-200">
+                <div class="font-bold text-emerald-700 text-sm">📍 유정이네 출발 (망우로 109)</div>
+                <div>• <strong>기준 공항 도착:</strong> 11:00까지 김포공항 도착 (출발 2시간 전)</div>
+                <div>• <strong>추천 대중교통 경로 (약 55~65분 소요):</strong></div>
+                <div class="pl-2">1. 인근 버스정류장 또는 <strong>상봉역/중화역</strong> 이동</div>
+                <div class="pl-2">2. 경의중앙선 또는 7호선 탑승 ➔ 공덕역 또는 왕십리역 등에서 <strong>5호선/공항철도</strong> 환승</div>
+                <div class="pl-2">3. <strong>김포공항역</strong> 하차 후 국내선 청사 도보 이동</div>
+                <div class="text-[11px] text-emerald-600 font-semibold mt-1">💡 환승 소요 시간을 고려해 오전 9:45~10:00 사이 출발을 권장합니다!</div>
+            </div>
+        </div>
+
+        <button onclick="closeRouteModal()" class="w-full h-11 rounded-xl bg-gradient-to-r from-pink-500 to-emerald-500 text-white text-xs font-bold shadow-md hover:opacity-90 transition-all cursor-pointer">
+            확인 완료
+        </button>
+    </div>
+</div>
+
+<!-- 🛬 국내선 절차 모달 -->
+<div id="flightModal" class="fixed inset-0 z-50 bg-black/60 backdrop-blur-sm hidden flex items-center justify-center p-4">
+    <div class="bg-white rounded-2xl max-w-md w-full p-6 space-y-4 shadow-2xl border border-pink-200 relative animate-in fade-in zoom-in duration-200">
+        <div class="flex justify-between items-center border-b border-pink-100 pb-3">
+            <h3 class="text-base font-bold text-pink-600 flex items-center gap-2">🛫 제주 여행 국내선 입·출국 절차</h3>
+            <button onclick="closeModal()" class="w-8 h-8 rounded-full bg-pink-50 flex items-center justify-center text-on-surface-variant hover:bg-pink-100 font-bold cursor-pointer">✕</button>
+        </div>
+        
+        <div class="text-xs space-y-3 text-on-surface-variant max-h-[60vh] overflow-y-auto pr-1">
+            <div class="p-3 bg-pink-50 rounded-xl space-y-1">
+                <div class="font-bold text-pink-600">1. 출발편 (9/6 김포 ➔ 제주)</div>
+                <div>• <strong>공항 도착:</strong> 출발 2시간 전 김포공항 국내선 청사 도착 (11:00)</div>
+                <div>• <strong>신분증 & 보안검색:</strong> 주민등록증, 운전면허증, 여권 중 1개 필수 지참 (모바일 신분증 가능)</div>
+                <div>• <strong>렌터카 인수 절차:</strong> 제주공항 도착 ➔ 1층 5번 게이트 ➔ 렌터카 하우스 <span class="hi-zone8">8구역</span> 1번 승차장에서 무지개렌트카 셔틀버스 탑승 ➔ 업체 도착 후 <strong>운전면허증 제시</strong> 및 <strong>차량 타기 전 외관 동영상 촬영</strong> 후 인수</div>
+            </div>
+
+            <div class="p-3 bg-emerald-50 rounded-xl space-y-1">
+                <div class="font-bold text-emerald-700">2. 귀국편 (9/10 제주 ➔ 김포)</div>
+                <div>• <strong>렌터카 반납 절차:</strong> 17:45까지 무지개렌트카 반납 ➔ 주행거리 확인 및 <span class="hi-fuel">유류비</span> 정산(추가 지불) 완료 ➔ 업체 셔틀타고 공항 3층(출발층) 이동</div>
+                <div>• <strong>수하물 규정:</strong> 위탁 수하물 1인당 최대 15kg, 휴대 수하물 10kg</div>
+                <div>• <strong>탑승 수속:</strong> 티웨이항공 카운터 및 보안검색 후 탑승구 대기</div>
+            </div>
+        </div>
+
+        <button onclick="closeModal()" class="w-full h-11 rounded-xl bg-gradient-to-r from-pink-500 to-emerald-500 text-white text-xs font-bold shadow-md hover:opacity-90 transition-all cursor-pointer">
+            확인 완료
+        </button>
+    </div>
+</div>
+
+<!-- 하단 고정 네온 인쇄 버튼 영역 -->
+<nav class="fixed bottom-0 inset-x-0 z-50 bg-white/90 backdrop-blur-xl border-t border-pink-100 p-3 shadow-lg">
+    <div class="max-w-lg mx-auto">
+        <button onclick="window.print()" class="w-full h-12 rounded-xl neon-btn-primary text-xs font-extrabold flex items-center justify-center gap-2 active:scale-[0.98] transition-all cursor-pointer">
+            <span class="material-symbols-outlined text-[20px]">print</span>
+            <span>화면 미리보기 및 PDF 파일로 출력하기</span>
+        </button>
+    </div>
+</nav>
+
+<!-- 자바스크립트 제어 및 시간 알림 시스템 -->
+<script>
+    function updateDday() {
+        const today = new Date();
+        const targetDate = new Date(2026, 8, 6);
+        
+        today.setHours(0, 0, 0, 0);
+        targetDate.setHours(0, 0, 0, 0);
+        
+        const diffTime = targetDate - today;
+        const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
+        
+        const badge = document.getElementById('ddayBadge');
+        if (diffDays > 0) {
+            badge.textContent = `D - ${diffDays}일 남음`;
+        } else if (diffDays === 0) {
+            badge.textContent = `🎉 오늘 출발 (D-Day)!`;
+            checkTravelAlerts();
+        } else {
+            badge.textContent = `✈️ 여행 중 (${Math.abs(diffDays)}일째)`;
+            checkTravelAlerts();
+        }
+    }
+
+    function checkTravelAlerts() {
+        const now = new Date();
+        const month = now.getMonth() + 1;
+        const date = now.getDate();
+        const hours = now.getHours();
+        const minutes = now.getMinutes();
+
+        if (month === 9 && date === 6 && hours === 10 && minutes === 0) {
+            alert("🚨 [알림] 혜정이 & 유정이네 공항 이동 출발 권장 시간입니다! 안전하게 움직여주세요! 🐾");
+        }
+
+        if (month === 9 && date === 10 && hours === 17 && minutes === 0) {
+            alert("🚨 [알림] 렌터카 반납 장소(무지개렌트카)로 이동할 시간입니다! 주유 상태를 확인하세요! 🚗");
+        }
+    }
+
+    setInterval(checkTravelAlerts, 60000);
+
+    function openSnackModal() {
+        document.getElementById('snackModal').classList.remove('hidden');
+    }
+    function closeSnackModal() {
+        document.getElementById('snackModal').classList.add('hidden');
+    }
+
+    function openRouteModal() {
+        document.getElementById('routeModal').classList.remove('hidden');
+    }
+    function closeRouteModal() {
+        document.getElementById('routeModal').classList.add('hidden');
+    }
+
+    function openModal() {
+        document.getElementById('flightModal').classList.remove('hidden');
+    }
+    function closeModal() {
+        document.getElementById('flightModal').classList.add('hidden');
+    }
+
+    updateDday();
+</script>
+
+</body>
+</html>
