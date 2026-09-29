@@ -25,9 +25,9 @@ document.addEventListener('DOMContentLoaded', () => {
     // 각 페이지별 데이터 정의
     const pageData = {
       '1': { url: 'https://jeju-nyangtueo-yeohaeng-webaeb--freeutleeyj.replit.app/', tools: ['Replit', 'Gemini'], detailUrl: '1-1.html' },
-      '2': { url: 'page2.html', tools: ['Adobe XD', 'Gemini', 'Anima'], detailUrl: '2-1.html' },
-      '3': { url: 'page3.html', tools: ['Figma', 'Gemini', 'Bolt.new'], detailUrl: '3-1.html' },
-      '4': { url: 'page4.html', tools: ['React', 'JavaScript'], detailUrl: '4-1.html' }
+      '2': { url: 'page2.html', tools: ['Adobe XD', 'ChatGPT', 'Anima'], detailUrl: '2-1.html' },
+      '3': { url: 'page3.html', tools: ['Figma', 'claude'], detailUrl: '3-1.html' },
+      '4': { url: 'page4.html', tools: ['Adobe XD', 'Gemini'], detailUrl: '4-1.html' }
     };
   
     // 아이템 클릭 이벤트 바인딩
