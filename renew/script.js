@@ -6,9 +6,9 @@ themeToggleBtn.addEventListener('click', () => {
     
     if (currentTheme === 'monotone') {
         document.documentElement.removeAttribute('data-theme');
-        themeToggleBtn.textContent = '흑백전환';
+        themeToggleBtn.textContent = 'mode';
     } else {
         document.documentElement.setAttribute('data-theme', 'monotone');
-        themeToggleBtn.textContent = '컬러전환';
+        themeToggleBtn.textContent = 'mode';
     }
 });
