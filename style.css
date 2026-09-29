@@ -303,11 +303,11 @@ header {
         align-items: center;
         padding-left: 0;
         list-style: none;
-        gap: 4px;
+        gap: 2px;
     }
 
     .tools-list li {
-        font-size: 0.6em;        
+        font-size: 0.8em;        
     }
     
 
