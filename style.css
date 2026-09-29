@@ -304,6 +304,12 @@ header {
         list-style: none;
         gap: 8px;
     }
+
+    .tools-list li {
+        font-size: 0.6em;        
+    }
+    
+
     .before-section {
         align-items: center;
     }
