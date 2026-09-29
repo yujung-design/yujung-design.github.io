@@ -88,6 +88,38 @@
       background-color: hsl(var(--background));
       color: hsl(var(--foreground));
     }
+
+    /* 상단 유틸리티 메뉴: 앱뷰에서도 한 줄 유지 */
+    .header-utility {
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      flex-wrap: nowrap;
+      white-space: nowrap;
+      gap: clamp(6px, 1.6vw, 24px);
+      font-size: clamp(9px, 0.9vw, 13px);
+      flex-shrink: 0;
+    }
+
+    .header-utility button {
+      flex: 0 0 auto;
+      font-size: clamp(17px, 1.55vw, 22px);
+    }
+
+    .header-logo {
+      flex: 0 0 auto;
+      width: clamp(62px, 5.7vw, 82px);
+      height: clamp(25px, 2.2vw, 32px);
+      font-size: clamp(10px, 0.9vw, 13px);
+    }
+
+    @media (max-width: 420px) {
+      #header > div {
+        gap: 8px;
+        padding-left: 10px;
+        padding-right: 10px;
+      }
+    }
   </style>
 </head>
 <body>
@@ -99,13 +131,13 @@
         <a
           href="#"
           aria-label="사계절출판사 홈"
-          class="flex h-8 w-[82px] items-center justify-center bg-primary text-[13px] font-bold tracking-[-0.08em] text-background"
+          class="header-logo flex items-center justify-center bg-primary font-bold tracking-[-0.08em] text-background"
         >
           사계절
         </a>
         <nav
           aria-label="유틸리티 메뉴"
-          class="flex items-center gap-3 text-[12px] font-normal text-foreground sm:gap-6 sm:text-[13px]"
+          class="header-utility font-normal text-foreground"
         >
           <a href="#" class="transition-opacity hover:opacity-60">로그인</a>
           <a href="#" class="transition-opacity hover:opacity-60">회원가입</a>

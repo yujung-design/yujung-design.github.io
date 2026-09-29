@@ -198,12 +198,20 @@ footer{padding-top:83px;padding-bottom:40px}
   .modal .box{padding:34px 24px 26px}
 }
 
-/* 작은 모바일 */
+/* 작은 모바일 — 헤더/전체화면 메뉴를 화면 폭(vw)에 비례해 축소 (375px 기준 환산) */
 @media(max-width:560px){
-  :root{--pad:20px}
-  .logo{font-size:22px}
-  .hd-l{gap:16px}
-  .hd-r{gap:14px;font-size:13px}
+  :root{--pad:5.3vw}
+  .hd{padding-top:4.8vw;padding-bottom:3.7vw}
+  .logo{font-size:5.9vw}
+  .hd-l{gap:4.3vw}
+  .hd-r{gap:3.7vw;font-size:max(11px,3.5vw)}
+  .burger{width:5.9vw;height:3.7vw}
+  .burger i{height:max(1px,.4vw)}
+  .burger i:nth-child(1){top:.8vw}
+  .burger i:nth-child(2){top:2.7vw}
+  .menu-open .burger i:nth-child(1),
+  .menu-open .burger i:nth-child(2){top:1.6vw}
+  nav.ov a{font-size:10.5vw}
   .big{font-size:clamp(42px,13.5vw,64px)}
   .big.xl{font-size:clamp(46px,15vw,72px)}
   figcaption{font-size:14px;padding-right:12px}
@@ -216,7 +224,6 @@ footer{padding-top:83px;padding-bottom:40px}
   .sub-cta:hover .big{letter-spacing:.02em}
   .f-l .body-k{font-size:14px;line-height:24px}
   .f-r{gap:40px}
-  nav.ov a{font-size:clamp(34px,11vw,52px)}
   .box form{flex-direction:column;border-bottom:0;gap:12px}
   .box input{border-bottom:1px solid var(--ink)}
   .box .pill{align-self:flex-start}
